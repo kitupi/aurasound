@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AuraSound - App de sonidos relajantes para reducir ansiedad y estrés." />
+  <title>AuraSound - Relajá tu mente</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f8ff;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      background: #4caf50;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    main {
+      flex: 1;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+    }
+    .cta-button {
+      display: inline-block;
+      background: #4caf50;
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      text-decoration: none;
+      margin-top: 2rem;
+    }
+    footer {
+      background: #e0f2f1;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>AuraSound</h1>
+    <p>Relajá tu mente, cuerpo y espíritu</p>
+  </header>
+  <main>
+    <h2>¿Estrés, ansiedad o insomnio?</h2>
+    <p>
+      AuraSound es tu espacio de paz interior. Disfrutá de sonidos relajantes diseñados para ayudarte a reducir la ansiedad, mejorar tu sueño y encontrar calma.
+    </p>
+    <a class="cta-button" href="https://play.google.com/store/apps/details?id=com.juydroid.aurasound&pcampaignid=web_share" target="_blank">
+      Descargar en Google Play
+    </a>
+  </main>
+
+  <footer>
+    &copy; 2025 AuraSound · <span id="idioma"></span>
+  </footer>
+
+  <!-- Google Translate Widget opcional -->
+  <script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'es',
+        includedLanguages: 'en,fr,de,pt,ru,es',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+      }, 'idioma');
+    }
+  </script>
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
