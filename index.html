@@ -68,17 +68,55 @@
     &copy; 2025 AuraSound · <span id="idioma"></span>
   </footer>
 
-  <!-- Google Translate Widget opcional -->
+  <!-- Traductor Automatico -->
   <script type="text/javascript">
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({
         pageLanguage: 'es',
         includedLanguages: 'en,es,fr,de,pt,ru',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-      }, 'google_translate_element');
+        autoDisplay: false
+      });
     }
+  
+    // Traducción automática según idioma del navegador
+    function traducirAutomaticamente() {
+      const idiomaNavegador = navigator.language || navigator.userLanguage;
+      const idiomaDestino = idiomaNavegador.substring(0, 2).toLowerCase();
+      const idiomasPermitidos = ['en', 'fr', 'de', 'pt', 'ru'];
+  
+      // Mostrar idioma en footer
+      const nombresIdiomas = {
+        'es': 'Español',
+        'en': 'English',
+        'fr': 'Français',
+        'de': 'Deutsch',
+        'pt': 'Português',
+        'ru': 'Русский'
+      };
+      document.getElementById("idioma").textContent = nombresIdiomas[idiomaDestino] || idiomaNavegador;
+  
+      // Traducir automáticamente si está en lista
+      if (idiomasPermitidos.includes(idiomaDestino)) {
+        const combo = document.querySelector('.goog-te-combo');
+        if (combo) {
+          combo.value = idiomaDestino;
+          combo.dispatchEvent(new Event('change'));
+        }
+      }
+    }
+  
+    // Cargar script de Google Translate
+    function cargarGoogleTranslate() {
+      const script = document.createElement('script');
+      script.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+      document.body.appendChild(script);
+  
+      // Intentar traducir después de un breve retraso
+      setTimeout(traducirAutomaticamente, 2000);
+    }
+  
+    document.addEventListener("DOMContentLoaded", cargarGoogleTranslate);
   </script>
-  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
