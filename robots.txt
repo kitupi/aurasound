@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aurasound.netlify.app/sitemap.xml
